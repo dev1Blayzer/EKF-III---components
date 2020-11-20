@@ -24,6 +24,15 @@ export class MyComponent {
     return format(this.first, this.middle, this.last);
   }
 
+  
+  private handleSubmit(e): string {
+    alert (e.value());
+    return e.value;
+  }
+
+  
+
+
   render() {
     const cssClasses = hostClasses({
       componentName: this.componentName,
@@ -34,8 +43,10 @@ export class MyComponent {
       <Host
         class={cssClasses}
         onClick={() => this.clicked.emit()}>
-        <ion-card class="ion-padding">Friday the 13th! I'm <span class={BEM(this, 'name')}> {this.getText()}</span><ion-chip color="danger">I Luyou</ion-chip></ion-card>
-        <ion-input placeholder="Enter your Zip Code"></ion-input>
+        <ion-card class="ion-padding">Please enter your zip code</ion-card>
+        <form onSubmit={this.handleSubmit} noValidate={true}>
+          <ion-input placeholder="Enter your Zip Code"></ion-input>
+          </form>
       </Host>
       
     );
