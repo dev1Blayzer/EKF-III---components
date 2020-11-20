@@ -35,7 +35,9 @@ export class MyComponent {
         class={cssClasses}
         onClick={() => this.clicked.emit()}>
         <ion-card class="ion-padding">Friday the 13th! I'm <span class={BEM(this, 'name')}> {this.getText()}</span><ion-chip color="danger">I Luyou</ion-chip></ion-card>
+        <ion-input placeholder="Enter your Zip Code"></ion-input>
       </Host>
+      
     );
   }
 }
